@@ -76,6 +76,20 @@ rosbags-convert --src {your_downloaded_bag} --dst {desired_destination_for_the_c
 ```shell
 ros2 bag record /glim_ros/aligned_points_corrected /glim_ros/odom_corrected {your_directory_for_the_recorded_bag}
 ```
+## To use this bag file, you need to update the IMU and point cloud topics in:
+
+```shell
+src/GLIM-to-HDMapping/src/glim/config/config_ros.json
+```
+
+Changes:
+
+```shell
+  Topics:
+    "imu_topic": "/os1_cloud_node1/imu",
+    "points_topic": "/os1_cloud_node1/points",
+    "image_topic": "/image",
+```
 
 ## GLIM Launch:
 
