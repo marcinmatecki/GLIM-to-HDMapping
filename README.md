@@ -1,12 +1,25 @@
-# kiss-icp-converter
+# GLIM-converter
 
+## Dependencies
+sudo apt install -y nlohmann-json3-dev
+
+## Documentation
+```shell
+https://koide3.github.io/glim/
+```
+
+For common depenedecies
+```shell
+https://koide3.github.io/glim/installation.html
+```
 
 ## Intended use 
 
-This small toolset allows to integrate SLAM solution provided by [kiss-icp](https://github.com/PRBonn/kiss-icp) with [HDMapping](https://github.com/MapsHD/HDMapping).
+This small toolset allows to integrate SLAM solution provided by [GLIM](https://github.com/koide3/glim) with [HDMapping](https://github.com/MapsHD/HDMapping).
 This repository contains ROS 2 workspace that :
-  - submodule to tested revision of Kiss ICP
+  - submodule to tested revision of GLIM
   - a converter that listens to topics advertised from odometry node and save data in format compatible with HDMapping.
+
 
 ## Building
 
@@ -14,7 +27,7 @@ Clone the repo
 ```shell
 mkdir -p /test_ws/src
 cd /test_ws/src
-git clone https://github.com/marcinmatecki/kiss-icp-to-hdmapping.git --recursive
+git clone https://github.com/marcinmatecki/GLIM-to-HDMapping.git --recursive
 cd ..
 colcon build
 ```
@@ -25,14 +38,14 @@ Prepare recorded bag with estimated odometry:
 
 In first terminal record bag:
 ```shell
-ros2 bag record /kiss/local_map /kiss/odometry
+ros2 bag record /glim_ros/aligned_points_corrected /glim_ros/odom_corrected
 ```
 
 and start odometry:
 ```shell 
 cd /test_ws/
 source ./install/setup.sh # adjust to used shell
-ros2 launch kiss_icp odometry.launch.py bagfile:=<path_to_rosbag> topic:=<topic_name>
+ros2 run glim_ros glim_rosbag <path_to_rosbag>
 ```
 
 ## Usage - conversion:
@@ -40,7 +53,7 @@ ros2 launch kiss_icp odometry.launch.py bagfile:=<path_to_rosbag> topic:=<topic_
 ```shell
 cd /test_ws/
 source ./install/setup.sh # adjust to used shell
-ros2 run kiss-icp-to-hdmapping listener <recorded_bag> <output_dir>
+ros2 run glim-to-hdmapping listener <recorded_bag> <output_dir>
 ```
 
 ## Example:
@@ -58,15 +71,15 @@ rosbags-convert --src {your_downloaded_bag} --dst {desired_destination_for_the_c
 ## Record the bag file:
 
 ```shell
-ros2 bag record /kiss/local_map /kiss/odometry -o {your_directory_for_the_recorded_bag}
+ros2 bag record /glim_ros/aligned_points_corrected /glim_ros/odom_corrected {your_directory_for_the_recorded_bag}
 ```
 
-## Kiss Launch:
+## GLIM Launch:
 
 ```shell
 cd /test_ws/
 source ./install/setup.sh # adjust to used shell
-ros2 launch kiss_icp odometry.launch.py bagfile:={path_to_bag_file} topic:=pp_points/synced2rgb
+ros2 run glim_ros glim_rosbag {path_to_bag_file} 
 ```
 
 ## During the record (if you want to stop recording earlier) / after finishing the bag:
@@ -81,6 +94,5 @@ Do it also in ros launch terminal by CTRL+C.
 ```shell
 cd /test_ws/
 source ./install/setup.sh # adjust to used shell
-ros2 run kiss-icp-to-hdmapping listener <recorded_bag> <output_dir>
-```# -GLIM-to-HDMapping
-# -GLIM-to-HDMapping
+ros2 run glim-to-hdmapping listener <recorded_bag> <output_dir>
+```
