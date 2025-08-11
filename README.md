@@ -1,7 +1,10 @@
 # GLIM-converter
 
 ## Dependencies
+
+```shell
 sudo apt install -y nlohmann-json3-dev
+```
 
 ## Documentation
 ```shell
