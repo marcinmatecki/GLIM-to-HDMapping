@@ -61,9 +61,8 @@ ros2 run glim-to-hdmapping listener <recorded_bag> <output_dir>
 
 ## Example:
 
-Download the dataset from [GitHub - ConSLAM](https://github.com/mac137/ConSLAM) or 
-directly from this [Google Drive link](https://drive.google.com/drive/folders/1TNDcmwLG_P1kWPz3aawCm9ts85kUTvnU). 
-Then, download **sequence2**.
+Download the dataset from [NTU-VIRAL](https://ntu-aris.github.io/ntu_viral_dataset/)
+Then, download **eee_03**.
 
 ## Convert(If it's a ROS1 .bag file):
 
