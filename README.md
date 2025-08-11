@@ -15,6 +15,11 @@ For common depenedecies
 ```shell
 https://koide3.github.io/glim/installation.html
 ```
+## Quick Start
+
+This section provides a quick guide to run the project, including example configuration changes and launch instructions.
+
+https://koide3.github.io/glim/quickstart.html
 
 ## Intended use 
 
