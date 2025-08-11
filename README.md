@@ -1,5 +1,12 @@
 # GLIM-converter
 
+## Intended use 
+
+This small toolset allows to integrate SLAM solution provided by [GLIM](https://github.com/koide3/glim) with [HDMapping](https://github.com/MapsHD/HDMapping).
+This repository contains ROS 2 workspace that :
+  - submodule to tested revision of GLIM
+  - a converter that listens to topics advertised from odometry node and save data in format compatible with HDMapping.
+
 ## Dependencies
 
 ```shell
@@ -22,14 +29,6 @@ This section provides a quick guide to run the project, including example config
 ```shell
 https://koide3.github.io/glim/quickstart.html
 ```
-
-## Intended use 
-
-This small toolset allows to integrate SLAM solution provided by [GLIM](https://github.com/koide3/glim) with [HDMapping](https://github.com/MapsHD/HDMapping).
-This repository contains ROS 2 workspace that :
-  - submodule to tested revision of GLIM
-  - a converter that listens to topics advertised from odometry node and save data in format compatible with HDMapping.
-
 
 ## Building
 
