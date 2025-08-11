@@ -19,7 +19,9 @@ https://koide3.github.io/glim/installation.html
 
 This section provides a quick guide to run the project, including example configuration changes and launch instructions.
 
+```shell
 https://koide3.github.io/glim/quickstart.html
+```
 
 ## Intended use 
 
