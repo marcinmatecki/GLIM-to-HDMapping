@@ -68,7 +68,7 @@ ros2 run glim-to-hdmapping listener <recorded_bag> <output_dir>
 ## Example:
 
 Download the dataset from [NTU-VIRAL](https://ntu-aris.github.io/ntu_viral_dataset/)
-Then, download **eee_03**.
+For this example, download eee_03.
 
 ## Convert(If it's a ROS1 .bag file):
 
