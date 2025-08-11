@@ -18,7 +18,7 @@ sudo apt install -y nlohmann-json3-dev
 https://koide3.github.io/glim/
 ```
 
-For common depenedecies
+To install the common dependencies needed for GLIM, follow the instructions provided in the official documentation:
 ```shell
 https://koide3.github.io/glim/installation.html
 ```
